@@ -144,6 +144,8 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ${RDXHOME}/env.json:/usr/share/nginx/html/env.json
+      - ${RDXHOME}/frontend/html/Theme.json:/usr/share/nginx/html/Theme.json
+      - ${RDXHOME}/frontend/html/favicon.ico:/usr/share/nginx/html/favicon.ico
     logging:
       driver: "json-file"
     deploy:
