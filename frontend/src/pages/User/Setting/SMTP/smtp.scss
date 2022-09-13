@@ -1,0 +1,14 @@
+$desk: 100/1920;
+
+._smtp_setting_ {
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-bottom: 50px;
+  min-height: calc(100vh - 70px);
+  .card_size {
+    width: 520 * $desk + vw;
+    position: relative;
+    padding-bottom: 4vw;
+    min-height: 40vw;
+  }
+}

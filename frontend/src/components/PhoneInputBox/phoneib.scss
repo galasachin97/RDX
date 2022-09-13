@@ -1,0 +1,106 @@
+$desk: 100/1920;
+
+.phone-ib {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 0.9375vw;
+  .phone_no_wrapper {
+    position: relative;
+    display: flex;
+    width: 100%;
+    margin-top: 5px;
+    border-radius: 6px;
+    box-shadow: var(--card-box-shadow);
+
+    padding: 0.5208333333vw;
+    font-size: 0.8333333333vw;
+    align-items: center;
+    height: 100%;
+    .country_flags {
+      margin-right: 10 * $desk + vw;
+      cursor: pointer;
+    }
+    .phone_input_style {
+      outline: none;
+      font-size: 0.8333333333vw;
+      border: 0 !important;
+      margin-left: 8 * $desk + vw;
+    }
+    .nav_drop {
+      width: 0.7vw;
+      cursor: pointer;
+      transition: all 0.1s ease-in;
+      margin-right: 0.5208333333vw;
+    }
+    .navbar_invert {
+      transform: rotate(180deg);
+    }
+  }
+  .flag_suggestion {
+    position: absolute;
+    top: 92%;
+    left: 0;
+    width: 100%;
+    background: red;
+    z-index: 4;
+    border-radius: 5px;
+    border: 2px solid #dddddd;
+    background-color: #fff;
+    .flag_options {
+      display: flex;
+      padding: 5 * $desk + vw;
+      cursor: pointer;
+      align-items: center;
+      &:hover {
+        background-color: #dddddd;
+      }
+    }
+    .flag_search_container {
+      display: flex;
+      padding: 0.5vw;
+      align-items: center;
+      .search_icon {
+        width: 2vw;
+      }
+      .flag_search_input {
+        width: 100%;
+        outline-color: var(--primary);
+        font-size: 12 * $desk + vw;
+        padding: 0.2vw;
+        &::placeholder {
+          font-size: 1.1vw !important;
+        }
+      }
+    }
+    .country_name {
+      font-size: 0.7125vw;
+      color: #111b60;
+      font-weight: 600;
+      margin: 0 10 * $desk + vw;
+      max-width: 60%;
+    }
+    .country_dial_code {
+      font-size: 0.7125vw;
+      color: #adadad;
+      font-weight: 600;
+      // margin: 0 10 * $desk + vw;
+    }
+    .active_flag {
+      background-color: var(--primary);
+      .country_name {
+        color: #fff;
+      }
+    }
+  }
+  label {
+    font-size: 15 * $desk + vw;
+    color: #111b60;
+    font-weight: 600;
+  }
+  .helperText {
+    color: red;
+    font-size: 14 * $desk + vw;
+    margin-left: 10px;
+  }
+}

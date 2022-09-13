@@ -1,0 +1,96 @@
+$desk: 100/1920;
+
+._modal_wrapper_ {
+  --background: #fff;
+  --primary: #2d62ed;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  z-index: 100;
+  .modal {
+    // width: clamp(36%, 480px, 90%);w
+    // width: 480px;
+    min-width: 480 * $desk + vw;
+    // height: min(50%, 80px);
+    align-self: flex-start;
+    background-color: var(--body-background);
+    // margin: auto;
+    margin-top: 50px;
+    padding: 0.5rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: var(--card-box-shadow);
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    .modal_content {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: space-between;
+      .success_icon {
+        color: rgb(53, 190, 25);
+        align-self: center;
+        font-size: 55 * $desk + vw;
+      }
+      .modal_icon {
+        align-self: center;
+        color: #ff4f46;
+        font-size: 35px;
+        // width: 30px;
+        // object-fit: contain;
+        // cursor: pointer;
+      }
+      .warning_content {
+        margin-left: 25px;
+        h3 {
+          font-size: 16px;
+        }
+        p {
+          font-size: 14px;
+          opacity: 0.6;
+        }
+      }
+      .warning_options {
+        display: flex;
+        // width: 32%;
+        height: 60%;
+        margin-left: 50px;
+        border-left: 2px solid var(--primary);
+        .warning_icon {
+          background-color: #ff4f46;
+          object-fit: contain;
+          cursor: pointer;
+          margin-left: 35px;
+          align-self: center;
+          padding: 0.3vw;
+          border-radius: 100%;
+          color: white;
+        }
+        .success_icon {
+          background-color: rgb(53, 190, 25);
+          object-fit: contain;
+          cursor: pointer;
+          margin-left: 35px;
+          align-self: center;
+          padding: 0.4vw;
+          border-radius: 100%;
+          color: white;
+          font-size: 24px;
+        }
+        .warning_icon:active {
+          animation: press 0.2s 1 linear;
+        }
+        .success_icon:active {
+          animation: press 0.2s 1 linear;
+        }
+      }
+    }
+  }
+}

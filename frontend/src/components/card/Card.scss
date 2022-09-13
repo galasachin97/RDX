@@ -1,0 +1,73 @@
+$desk: 100/1920;
+
+._card_container_ {
+  display: flex;
+  height: 100%;
+  //   min-width: 330px;
+  // width: 330px;
+  padding-left: 1.2vw;
+  // padding-right: 30px;
+  // padding-top: 20px;
+  // padding-bottom: 12px;
+  // justify-content: center;
+  align-items: center;
+  box-shadow: var(--box-shadow);
+  border-radius: 15px;
+  background: var(--background);
+  .fas {
+    font-size: 2vw;
+    color: var(--primary);
+    filter: var(--icon-color);
+    margin-right: 0.8vw;
+    margin-left: 0.4vw;
+  }
+  .adjust_mdi {
+    font-size: 3.2vw;
+    color: var(--primary);
+    filter: var(--icon-color);
+    margin-right: 0.3vw;
+    margin-left: 0vw;
+  }
+  .material-icons {
+    font-size: 60 * $desk + vw;
+    filter: var(--icon-color);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+  }
+
+  .stat_img {
+    width: 2.8vw;
+    color: var(--secondary);
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.8vw;
+    padding-left: 1vw;
+
+    h5 {
+      font-size: 16px;
+      color: #7e84a3;
+    }
+    h2 {
+      font-size: 1.2vw;
+      font-family: PoppinsBold;
+      color: var(--text);
+      font-weight: bolder;
+      @media only screen and (min-width: 1305px) and (max-width: 1600px) {
+        // font-size: 0.8vw;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+._box_card_container_ {
+  width: 100%;
+  padding: 35 * $desk + vw 85 * $desk + vw;
+  box-shadow: var(--box-shadow);
+  background: var(--background);
+  border-radius: 15px;
+}

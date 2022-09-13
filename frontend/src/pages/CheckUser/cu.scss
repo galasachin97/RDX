@@ -1,0 +1,187 @@
+$desk: 100/1920;
+
+.check_user {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  // background: #090d00;
+  background: #000;
+  color: rgba(255, 255, 255, 0.25);
+  text-align: center;
+  font: 700 4em/1 "Oswald", sans-serif;
+  overflow: hidden;
+  .background__image {
+    width: 1040px;
+    height: 480px;
+    object-fit: contain;
+    z-index: 1;
+  }
+  .overlay--gradient {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: calc(100vh * 1.8);
+    height: 100%;
+    transform: translateX(-50%);
+    // background: radial-gradient(
+    //   ellipse at center,
+    //   transparent 0%,
+    //   rgb(0, 0, 0) 100%
+    // );
+    z-index: 5;
+  }
+  .company {
+    letter-spacing: 0;
+    padding: 0.25em 0 0.325em;
+    display: block;
+    margin: 0 auto;
+    text-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
+
+    /* Clip Background Image */
+
+    background: url("../../assets/images/animated-text-fill.png") repeat-y;
+    background-clip: text;
+
+    /* Animate Background Image */
+
+    -webkit-text-fill-color: transparent;
+    animation: aitf 80s linear infinite;
+
+    /* Activate hardware acceleration for smoother animations */
+
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+  }
+  .logoText {
+    opacity: 0;
+    position: absolute;
+    font-family: Artegra;
+    z-index: 555;
+    color: #bb833c;
+    font-size: 205px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-40.5%, -27.5%);
+    letter-spacing: 9px;
+    transition: all 1s ease-in-out;
+    background: linear-gradient(to right, #bb833c 0, #fff 10%, #bb833c 20%);
+    background-position: 0;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 5s infinite linear;
+    animation-fill-mode: forwards;
+  }
+  .maintenance_header {
+    font: 700 0.9em/1 "Poppins", sans-serif !important;
+    color: #fff !important;
+    letter-spacing: 10px;
+  }
+  .maintenance_sub_header {
+    width: 80%;
+    font: 700 0.25em/1 "Poppins", sans-serif !important;
+    color: #fff !important;
+    letter-spacing: 5px;
+    margin-top: 15px;
+  }
+  .wrapper {
+    position: relative;
+    width: 200px;
+    height: 60px;
+    margin: 20px 0;
+    // position: absolute;
+    // left: 50%;
+    // top: 50%;
+    // transform: translate(-50%, -50%);
+    .circle {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      border-radius: 50%;
+      background-color: #fff;
+      left: 15%;
+      transform-origin: 50%;
+      animation: circle 0.5s alternate infinite ease;
+      &:nth-child(2) {
+        left: 45%;
+        animation-delay: 0.2s;
+      }
+      &:nth-child(3) {
+        left: auto;
+        right: 15%;
+        animation-delay: 0.3s;
+      }
+    }
+    .shadow {
+      width: 20px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: rgba(195, 192, 192, 0.05);
+      position: absolute;
+      top: 62px;
+      transform-origin: 50%;
+      // z-index: -1;
+      left: 15%;
+      filter: blur(1px);
+      animation: shadow 0.5s alternate infinite ease;
+      &:nth-child(4) {
+        left: 45%;
+        animation-delay: 0.2s;
+      }
+      &:nth-child(5) {
+        left: auto;
+        right: 15%;
+        animation-delay: 0.3s;
+      }
+    }
+  }
+}
+@keyframes shadow {
+  0% {
+    transform: scaleX(1.5);
+  }
+  40% {
+    transform: scaleX(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scaleX(0.2);
+    opacity: 0.4;
+  }
+}
+@keyframes circle {
+  0% {
+    top: 60px;
+    height: 5px;
+    border-radius: 50px 50px 25px 25px;
+    transform: scaleX(1.7);
+  }
+  40% {
+    height: 20px;
+    border-radius: 50%;
+    transform: scaleX(1);
+  }
+  100% {
+    top: 0%;
+  }
+}
+@keyframes aitf {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position: -100vw 0;
+  }
+  100% {
+    background-position: 100vw 0;
+  }
+}

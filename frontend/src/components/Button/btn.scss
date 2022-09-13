@@ -1,0 +1,43 @@
+$desk: 100/1920;
+.btn {
+  width: 200 * $desk + vw;
+  min-height: 40 * $desk + vw;
+  background: var(--primary);
+  border: 0;
+  border-radius: 8px;
+  font-family: Poppins;
+  font-size: 18 * $desk + vw;
+  color: #fff;
+  margin: 0 3px;
+  cursor: pointer;
+}
+
+.btn:active {
+  animation: press 0.2s 1 linear;
+}
+
+.btn:disabled {
+  opacity: 0.4 !important;
+  cursor: auto;
+  pointer-events: none;
+}
+
+@keyframes press {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.92);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.btn_gradient {
+  background: rgb(1, 58, 162);
+  background: linear-gradient(
+    0deg,
+    var(--gradient-button-color-2) 5%,
+    var(--gradient-button-color-1) 60%
+  );
+}

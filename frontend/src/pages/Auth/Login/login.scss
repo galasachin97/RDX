@@ -1,0 +1,27 @@
+$desk: 100/1920;
+
+.__auth_login__ {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  .auth_form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding-top: 2vw;
+    input {
+      width: 100%;
+    }
+    .signup-text {
+      font-size: 13px;
+      text-align: right;
+      margin: 35px 0;
+      span {
+        color: #309bdb;
+        text-decoration: underline;
+      }
+    }
+  }
+}

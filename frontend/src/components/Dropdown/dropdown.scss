@@ -1,0 +1,99 @@
+$desk: 100/1920;
+
+.title {
+  text-align: center;
+}
+
+.custom-select-container {
+  position: relative;
+  display: inline-block;
+  width: 340px;
+  .dd-label {
+    font-size: 14 * $desk + vw;
+    margin-bottom: 5px;
+  }
+  .selected-text {
+    width: 100%;
+    text-align: left;
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+    padding: 6px 2.3vw;
+    border-top-left-radius: 12px;
+    border: 0;
+    border-top-right-radius: 12px;
+    cursor: pointer;
+    color: var(--text);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 16 * $desk + vw;
+  }
+  .drop_icon {
+    position: absolute;
+    right: 20 * $desk + vw;
+    width: 25 * $desk + vw;
+    top: 20%;
+    pointer-events: none;
+    transition: all 0.2s ease-in;
+  }
+  .list_open {
+    transform: rotate(180deg);
+  }
+
+  .select-options {
+    position: absolute;
+    width: 100%;
+    // max-height: 9vw;
+    overflow: auto;
+    opacity: 0;
+    visibility: hidden;
+    border-radius: 9px;
+    transform: scale(0.01);
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s;
+    transform-origin: center top;
+    box-shadow: var(--box-shadow);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    z-index: 5;
+    .custom-select-option {
+      color: var(--text);
+      width: 100%;
+      border: 0;
+      padding: 6px 20px;
+      text-align: left;
+      background-color: var(--background);
+      border-bottom: 1px solid gray;
+      cursor: pointer;
+      word-break: break-all;
+      overflow: hidden;
+      display: block;
+      text-transform: capitalize;
+      &:hover {
+        background-color: var(--primary);
+        color: #ffffff;
+      }
+    }
+  }
+
+  .custom-select-option:first-child {
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+  }
+  .custom-select-option:last-child {
+    border-bottom-left-radius: 9px;
+    border-bottom-right-radius: 9px;
+  }
+
+  .active__ {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    transform-origin: center top;
+
+    // transform: translateY(0);
+  }
+  .active_option {
+    background-color: var(--primary) !important;
+    color: #ffffff !important;
+  }
+}

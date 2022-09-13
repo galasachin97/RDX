@@ -1,0 +1,341 @@
+version: '3.7'
+
+services:
+  mongo:
+    image: dev.diycam.com/diycam/rdx_mongo:4.4.3
+    volumes:
+      - ${RDXHOME}/data:/data/db
+      - ${RDXHOME}/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+    ports:
+      - 27017:27017
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        order: start-first
+        failure_action: rollback
+      rollback_config:
+        parallelism: 1
+        order: start-first
+      restart_policy:
+        condition: any
+      resources:
+        limits:
+          memory: 500M
+    networks:
+      - system-default
+
+  mongo-express:
+    image: dev.diycam.com/diycam/rdx_mongo-express:0.54.0
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: diycam
+      ME_CONFIG_MONGODB_ADMINPASSWORD: diycam123
+    depends_on:
+      - mongo
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        order: start-first
+        failure_action: rollback
+      rollback_config:
+        parallelism: 1
+        order: start-first
+      restart_policy:
+        condition: any
+      resources:
+        limits:
+          memory: 100M
+    networks:
+      - system-default
+
+  kong-database:
+    image: dev.diycam.com/diycam/rdx_postgres:9.6.20-alpine
+    environment:
+      POSTGRES_USER: kong
+      POSTGRES_DB: kong
+      POSTGRES_PASSWORD: kong
+    volumes:
+      - ${RDXHOME}/kong_data:/var/lib/postgresql/data
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        order: start-first
+        failure_action: rollback
+      rollback_config:
+        parallelism: 1
+        order: start-first
+      restart_policy:
+        condition: any
+      resources:
+        limits:
+          memory: 100M
+    networks:
+      - gateway
+
+  kong:
+    image: dev.diycam.com/diycam/rdx_kong:2.2.0-alpine
+    environment:
+      KONG_PG_HOST: kong-database
+      KONG_DATABASE: postgres
+      KONG_PG_USER: kong
+      KONG_PG_PASSWORD: kong
+      KONG_PROXY_LISTEN: 0.0.0.0:8000
+      KONG_ADMIN_LISTEN: 0.0.0.0:8001
+    depends_on:
+      - kong-database
+    ports:
+      - "8001:8001"
+      - "80:8000"
+    healthcheck:
+      test: [ "CMD", "kong", "health", "&&", "kong", "reload" ]
+      interval: 10s
+      timeout: 10s
+      retries: 10
+    logging:
+      driver: "json-file"
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        order: start-first
+        failure_action: rollback
+      rollback_config:
+        parallelism: 1
+        order: start-first
+      restart_policy:
+        condition: any
+      resources:
+        limits:
+          memory: 1000M
+    networks:
+      - gateway
+      - system-default
+      - frontend
+
+  static_server:
+    image: dev.diycam.com/diycam/rdx_nginx:alpine
+    volumes:
+      - ${RDXHOME}/static_server:/usr/share/nginx/html:ro
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        order: start-first
+        failure_action: rollback
+      rollback_config:
+        parallelism: 1
+        order: start-first
+      restart_policy:
+        condition: any
+      resources:
+        limits:
+          memory: 100M
+    networks:
+      - system-default
+
+  frontend:
+    image: dev.diycam.com/diycam/rdx_frontend:logistics
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    volumes:
+      - ${RDXHOME}/env.json:/usr/share/nginx/html/env.json
+    logging:
+      driver: "json-file"
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        order: start-first
+        failure_action: rollback
+      rollback_config:
+        parallelism: 1
+        order: start-first
+      restart_policy:
+        condition: any
+      resources:
+        limits:
+          memory: 100M
+    networks:
+      - frontend
+
+  base:
+    image: dev.diycam.com/diycam/rdx_base:logistics
+    command: [ "python", "run.py" ]
+    build:
+      context: ./base
+      dockerfile: Dockerfile
+    volumes:
+      - ${RDXHOME}/base:/home/diycam/code
+      - ${RDXHOME}/static_server/:/home/diycam/code/static_server
+      - ${RDXHOME}/email-templates:/home/diycam/code/api/service/helpers/email-templates
+      - ${RDXHOME}/mounts:/home/diycam/code/mounts
+      - ${RDXHOME}/env.json:/home/diycam/code/mounts/env.json
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+    environment:
+      - SECRET_KEY_ENCRYPT=8tFXLF46fRUkRFqJrfMjIbYAYeEJKyqB
+    logging:
+      driver: "json-file"
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        order: start-first
+        failure_action: rollback
+      rollback_config:
+        parallelism: 1
+        order: start-first
+      restart_policy:
+        condition: any
+      resources:
+        limits:
+          memory: 500M
+    networks:
+      - system-default
+
+  service:
+    image: dev.diycam.com/diycam/rdx_service:logistics
+    build:
+      context: ./service
+      dockerfile: Dockerfile
+    command: [ "python", "run.py" ]
+    volumes:
+      - ${RDXHOME}/service:/home/diycam/code
+      - ${RDXHOME}/static_server/:/home/diycam/code/static_server
+      - ${RDXHOME}/env.json:/home/diycam/code/envs/env.json
+      - ${RDXHOME}/usecase_db:/home/diycam/code/usecase_db
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+    logging:
+      driver: "json-file"
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        order: start-first
+        failure_action: rollback
+      rollback_config:
+        parallelism: 1
+        order: start-first
+      restart_policy:
+        condition: any
+      resources:
+        limits:
+          memory: 500M
+    networks:
+      - system-default
+
+  camera:
+    image: dev.diycam.com/diycam/rdx_camera:logistics
+    build:
+      context: ./camera
+      dockerfile: Dockerfile
+    command: [ "python", "run.py" ]
+    volumes:
+      - ${RDXHOME}/camera:/home/diycam/code
+      - ${RDXHOME}/static_server:/home/diycam/code/ref_image
+      - ${RDXHOME}/env.json:/home/diycam/code/envs/env.json
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      - SECRET_KEY_ENCRYPT=8tFXLF46fRUkRFqJrfMjIbYAYeEJKyqB
+    logging:
+      driver: "json-file"
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        order: start-first
+        failure_action: rollback
+      rollback_config:
+        parallelism: 1
+        order: start-first
+      restart_policy:
+        condition: any
+      resources:
+        limits:
+          memory: 500M
+    networks:
+      - system-default
+
+  user_info:
+    image: dev.diycam.com/diycam/rdx_user_info:logistics
+    build:
+      context: ./user
+      dockerfile: Dockerfile
+    command: [ "python", "run.py" ]
+    volumes:
+      - ${RDXHOME}/user:/home/diycam/code
+      - ${RDXHOME}/env.json:/home/diycam/code/envs/env.json
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+    environment:
+      - ACCESS_TOKEN_EXPIRES_IN=45
+      - OTP_INTERVAL=600
+      - OTP_SECRET=QHMPGBDM6QPR6UBT
+    logging:
+      driver: "json-file"
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        order: start-first
+        failure_action: rollback
+      rollback_config:
+        parallelism: 1
+        order: start-first
+      restart_policy:
+        condition: any
+      resources:
+        limits:
+          memory: 500M
+    networks:
+      - system-default
+
+  socketserver:
+    image: dev.diycam.com/diycam/rdx_socket_server:logistics
+    build:
+      context: ./socket_server
+      dockerfile: Dockerfile
+    command: [ "python", "app.py" ]
+    volumes:
+      - ${RDXHOME}/socket_server:/code
+      - ${RDXHOME}/env.json:/code/envs/env.json
+      - ${RDXHOME}/config:/code/config
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+    logging:
+      driver: "json-file"
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        order: start-first
+        failure_action: rollback
+      rollback_config:
+        parallelism: 1
+        order: start-first
+      restart_policy:
+        condition: any
+      resources:
+        limits:
+          memory: 500M
+    networks:
+      - usecase
+      - system-default
+
+networks:
+  frontend:
+    name: frontend
+  gateway:
+    name: gateway
+  system-default:
+    name: system-default
+  usecase:
+    name: usecase

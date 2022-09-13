@@ -1,0 +1,142 @@
+$desk: 100/1920;
+
+.switch_wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 30 * $desk + vw;
+  position: relative;
+  align-items: center;
+  .switch_label {
+    flex: 1;
+    font-size: 15 * $desk + vw;
+  }
+  // .switch_box {
+  //   font-weight: bold;
+  //   .value_on {
+  //     position: relative;
+  //     z-index: 1;
+  //     font-size: 12 * $desk + vw;
+  //     color: #fff;
+  //     cursor: pointer;
+  //     left: 37%;
+  //     bottom: 0.26vw;
+  //   }
+  //   .value_off {
+  //     position: relative;
+  //     z-index: 1;
+  //     font-size: 12 * $desk + vw;
+  //     cursor: pointer;
+  //     left: 62%;
+  //     color: #000;
+  //     bottom: 0.23vw;
+  //   }
+  // }
+
+  .adjust_i {
+    padding: 0.1vw;
+    border-radius: 100%;
+    font-size: 18 * $desk + vw;
+    margin-left: 0.5vw;
+    // margin-top: 0.5vw;
+    cursor: pointer;
+    animation: beat 0.75s infinite alternate;
+    transform-origin: center;
+  }
+  a {
+    color: var(--icon-color-invert);
+  }
+
+  @keyframes beat {
+    to {
+      transform: scale(1.4);
+    }
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 40 * $desk + vw;
+    height: 20 * $desk + vw;
+
+    input {
+      display: none;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+
+      &::before {
+        position: absolute;
+        content: "";
+        height: 14 * $desk + vw;
+        width: 14 * $desk + vw;
+        left: 2.8 * $desk + vw;
+        bottom: 3 * $desk + vw;
+        background-color: white;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+      }
+    }
+
+    input:checked + .slider {
+      background-color: var(--primary);
+    }
+
+    input:focus + .slider {
+      box-shadow: 0 0 1px var(--primary);
+    }
+
+    input:checked + .slider:before {
+      left: 23 * $desk + vw;
+    }
+
+    /*------ ADDED CSS ---------*/
+    .on {
+      display: none;
+    }
+
+    .on,
+    .off {
+      color: #fff;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 30%;
+      font-size: 12 * $desk + vw;
+      font-weight: bold;
+      // font-family: Verdana, sans-serif;
+    }
+
+    .off {
+      left: 69%;
+      color: #000;
+    }
+
+    input:checked + .slider .on {
+      display: block;
+    }
+
+    input:checked + .slider .off {
+      display: none;
+    }
+
+    /*--------- END --------*/
+
+    /* Rounded sliders */
+    .slider.round {
+      border-radius: 34 * $desk + vw;
+    }
+
+    .slider.round:before {
+      border-radius: 50%;
+    }
+  }
+}

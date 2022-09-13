@@ -1,0 +1,154 @@
+$desk: 100/1920;
+
+._schedule_card_ {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  background-color: var(--background);
+  border-radius: 12px;
+  box-shadow: var(--box-shadow);
+  //   overflow: hidden;
+
+  .sc_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25 * $desk + vw;
+    font-size: 20 * $desk + vw;
+    .arrows {
+      display: flex;
+      flex-direction: column;
+    }
+    .up {
+      transform: rotate(270deg);
+      cursor: pointer;
+    }
+    .down {
+      transform: rotate(90deg);
+      cursor: pointer;
+    }
+    // .up:active {
+    //   animation: presss 0.2s 1 linear;
+    // }
+    // .down:active {
+    //   animation: presss 0.2s 1 linear;
+    // }
+    @keyframes presss {
+      0% {
+        transform: rotate(270deg) scale(1);
+      }
+      50% {
+        transform: rotate(270deg) scale(0.92);
+      }
+      to {
+        transform: rotate(270deg) scale(1);
+      }
+    }
+  }
+  .time_line_wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 26vh;
+    scroll-behavior: smooth;
+    .time_line {
+      position: absolute;
+      width: 106%;
+      height: 100%;
+      top: 0px;
+      bottom: 0px;
+      left: 0px;
+      right: -15px;
+      overflow: auto;
+      scroll-behavior: smooth;
+      padding-left: 10 * $desk + vw;
+      padding-right: 20 * $desk + vw;
+      .time_ {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 35%;
+        .text_ {
+          align-self: flex-start;
+          margin-top: -5px;
+          font-size: 14px;
+          color: var(--text);
+          opacity: 0.5;
+        }
+        .line {
+          position: relative;
+          width: 80%;
+          border-top: 2px solid var(--text);
+          height: 100%;
+          //   height: 2px;
+          //   background: var(--text);
+          .counts {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: absolute;
+            min-width: 50%;
+            height: 45%;
+            background: rgba(10, 173, 232, 0.2);
+            border-radius: 6px;
+            right: 2%;
+            top: 23%;
+            padding: 0 14 * $desk + vw;
+            padding-right: 8 * $desk + vw;
+            border: 2px solid #00ccf2;
+            overflow: hidden;
+            transition: all 0.5s ease-in-out;
+            .mdi {
+              font-size: 22px;
+            }
+            .cam_usecase {
+              min-width: 65px;
+              margin-left: 5px;
+              margin-right: 5px;
+              //   padding: 14 * $desk + vw;
+              font-size: 10 * $desk + vw;
+              font-weight: bold;
+              .flex_ {
+                display: flex;
+                justify-content: space-between;
+              }
+            }
+            .c_icon {
+              display: none;
+              opacity: 0;
+              visibility: hidden;
+              margin: 0 3px;
+              cursor: pointer;
+              //   transform: translateX(110px);
+            }
+          }
+          .counts:hover {
+            min-width: 55%;
+            .c_icon {
+              display: block;
+              visibility: visible;
+              opacity: 1;
+              animation: fade 1s;
+            }
+          }
+
+          @keyframes fade {
+            0% {
+              opacity: 0;
+            }
+
+            100% {
+              opacity: 1;
+            }
+          }
+        }
+      }
+      //   .time_:nth-child(odd) {
+      //     color: #777;
+      //   }
+      //   .time_:nth-child(even) {
+      //     color: blue;
+      //   }
+    }
+  }
+}

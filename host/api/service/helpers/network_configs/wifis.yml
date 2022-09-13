@@ -1,0 +1,14 @@
+network:
+  renderer: NetworkManager
+  version: 2
+  wifis:
+    wlan0:
+      access-points:
+      addresses:
+      - 192.168.0.151/24
+      dhcp4: false
+      gateway4: 192.168.0.1
+      nameservers:
+        addresses:
+        - 192.168.0.1
+        - 8.8.8.8

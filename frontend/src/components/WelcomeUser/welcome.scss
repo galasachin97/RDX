@@ -1,0 +1,106 @@
+$desk: 100/1920;
+
+._welcome_user_ {
+  position: relative;
+  box-shadow: var(--box-shadow);
+  padding: 30 * $desk + vw 45 * $desk + vw;
+  //   min-width: 700 * $desk + vw;
+  // width: 700 * $desk + vw;
+  border-radius: 10px;
+  color: var(--text);
+  background-color: var(--background);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  h2 {
+    font-weight: bold;
+    font-size: 26px;
+    margin-bottom: 15 * $desk + vw;
+    width: 65%;
+  }
+  p {
+    font-size: 16px;
+    width: 65%;
+    margin-bottom: 15 * $desk + vw;
+  }
+
+  li {
+    color: var(--text);
+    font-size: 18px;
+    width: 65%;
+  }
+
+  li a {
+    color: var(--primary);
+    text-decoration: underline;
+  }
+
+  li a:hover {
+    position: fixed;
+    font-size: 19px;
+  }
+  .annotation {
+    position: absolute;
+    right: 0;
+    width: 35%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .img_user {
+    position: absolute;
+    right: 45 * $desk + vw;
+    top: 50%;
+    transform: translateY(-50%);
+
+    .welcome_icon {
+      position: relative;
+      top: 5%;
+      width: 100%;
+    }
+    .hand {
+      position: absolute;
+      right: 12%;
+      top: 38%;
+      transition: all 0.4s ease-in-out;
+      transform-origin: top;
+    }
+    .dot1 {
+      position: absolute;
+      right: 30%;
+      top: 4%;
+      transition: all 0.4s ease-in-out;
+    }
+    .dot2 {
+      position: absolute;
+      left: 5%;
+      bottom: 26%;
+      transition: all 0.4s ease-in-out;
+    }
+  }
+
+  &:hover .hand {
+    transform-origin: top;
+    transform: rotate(45deg);
+    right: 10%;
+    top: 35%;
+  }
+  &:hover .dot1 {
+    transform: scale(1.7);
+  }
+  &:hover .dot2 {
+    transform: scale(1.7);
+  }
+
+  ul li::before {
+    content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: #ff007c; /* Change the color */
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1em; /* Also needed for space (tweak if needed) */
+  }
+  ul li:hover {
+    cursor: pointer;
+  }
+}

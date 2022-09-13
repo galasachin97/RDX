@@ -1,0 +1,43 @@
+$desk: 100/1920;
+
+.__auth_reset_password__ {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  .auth_form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding-top: 2vw;
+    input {
+      width: 100%;
+      text-transform: lowercase;
+    }
+    .signup-text {
+      font-size: 13px;
+      text-align: right;
+      margin: 35px 0;
+      span {
+        color: #309bdb;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.__auth_otp__ {
+  ._counter {
+    font-size: 35 * $desk + vw;
+    color: var(--primary);
+  }
+  span {
+    cursor: pointer;
+    color: var(--primary);
+  }
+  .disabled {
+    color: #aaaaaa !important;
+    text-decoration: none !important;
+  }
+}

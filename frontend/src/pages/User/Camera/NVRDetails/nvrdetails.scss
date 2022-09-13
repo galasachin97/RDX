@@ -1,0 +1,20 @@
+$desk: 100/1920;
+
+._nvr_details_ {
+    display: flex;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    min-height: calc(100vh - 70px);
+    align-items: flex-start;
+    .card_size {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 520 * $desk + vw;
+        position: relative;
+        min-height: 40vw;
+        padding: 35* $desk + vw  80* $desk + vw;
+      }
+
+}

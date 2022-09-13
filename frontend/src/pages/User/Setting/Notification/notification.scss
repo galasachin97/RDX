@@ -1,0 +1,102 @@
+$desk: 100/1920;
+
+._notification_setting_ {
+  display: flex;
+  align-items: flex-start;
+  padding: 30 * $desk + vw;
+  padding-top: 30px;
+  padding-left: 30px;
+  p {
+    text-transform: capitalize;
+  }
+
+  // min-height: calc(100vh - 70px);
+  .notification_options {
+    width: 50%;
+    display: grid;
+    // grid-template-columns: repeat(2, 1fr);
+    // grid-template-columns: repeat(auto-fill, 16vw);
+    grid-template-columns: repeat(auto-fit, minmax(9vw, 1fr));
+    grid-template-rows: auto 1fr auto;
+    // grid-template-columns: repeat(auto-fit, minmax(350 * $desk + vw, 1fr));
+    grid-gap: 16px;
+    margin-right: 2vw;
+    box-shadow: var(--card-box-shadow);
+    background: var(--background);
+    border-radius: 15px;
+    padding: 1vw;
+    .notification_option_card {
+      align-self: baseline;
+      padding: 20 * $desk + vw;
+      .option_ {
+        display: flex;
+        justify-content: space-between;
+        .material-icons {
+          font-size: 30 * $desk + vw;
+        }
+        .arrow_ {
+          box-shadow: var(--card-box-shadow);
+          background: var(--body-background);
+          border-radius: 15px;
+          transform: rotate(-45deg);
+          transition: transform 0.3s ease-in-out;
+          cursor: pointer;
+          &:hover {
+            transform: rotate(0deg);
+          }
+        }
+        .arrow_selected_ {
+          box-shadow: var(--card-box-shadow);
+          background: var(--body-background);
+          border-radius: 15px;
+          cursor: pointer;
+        }
+      }
+      .switch_wrapper .switch .slider.round:before {
+        background-color: var(--primary);
+      }
+
+      .switch_wrapper .switch input:checked + .slider {
+        background-color: #fff;
+      }
+      .switch_wrapper .switch input:checked + .slider .on {
+        color: #000;
+      }
+    }
+    .active_notification_option_card {
+      .switch_label {
+        color: white;
+      }
+    }
+  }
+  .notification_input {
+    flex: 1;
+  }
+  // .card_wrapper {
+  //   display: grid;
+  //   grid-template-columns: 1fr 1fr 1fr;
+  //   grid-gap: 3vw;
+  //   // display: flex;
+  //   // flex-wrap: wrap;
+  // }
+  .card_size1 {
+    width: 100%;
+    // position: absolute;
+    width: 520 * $desk + vw;
+
+    // margin-right: 4vw;
+    // margin-bottom: 2vw;
+    // .switch_wrapper {
+    //   margin-bottom: 0;
+    // }
+    .selected-text {
+      padding-right: 3vw;
+    }
+  }
+  // .card_size2 {
+  //   width: 520 * $desk + vw;
+  // }
+  .__loading__adjust__ {
+    z-index: 1000;
+  }
+}

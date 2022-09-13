@@ -1,0 +1,36 @@
+$desk: 100/1920;
+
+.__auth_register_device__ {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  .auth_form {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 90%;
+    padding-top: 1vw;
+    .input_style {
+      width: 100%;
+    }
+    .signup-text {
+      color: #818181;
+      font-size: 16 * $desk + vw;
+      text-align: right;
+      margin-bottom: 35px;
+      span {
+        color: #309bdb;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      .disabled {
+        color: #9e9e9e;
+        cursor: not-allowed;
+      }
+    }
+  }
+}

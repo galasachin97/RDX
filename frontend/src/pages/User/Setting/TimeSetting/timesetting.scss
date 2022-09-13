@@ -1,0 +1,22 @@
+$desk: 100/1920;
+
+._time_setting_ {
+  padding-top: 30px;
+  padding-left: 30px;
+  min-height: calc(100vh - 70px);
+  .card_size {
+    width: 520 * $desk + vw;
+    position: relative;
+    padding-bottom: 8vw;
+  }
+  .__input__ {
+    margin-bottom: 1.5625vw;
+    .input_style {
+      padding-left: 2.3vw;
+      font-size: 0.78125vw !important;
+    }
+  }
+  #currentTime {
+    font-size: 12px;
+  }
+}

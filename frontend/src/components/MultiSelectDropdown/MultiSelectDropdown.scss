@@ -1,0 +1,107 @@
+$desk: 100/1920;
+
+.title {
+  text-align: center;
+}
+
+.custom-multi-select-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  .dd-label {
+    font-size: 15 * $desk + vw;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  .selected-text {
+    position: relative;
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+    padding: 0.3875vw 0.5208333333vw;
+    border-top-left-radius: 12px;
+    border-radius: 6px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    color: black;
+    font-size: 0.8vw;
+    // background: transparent;
+    font-family: PoppinsBold;
+    // box-shadow: unset;
+    // padding-left: 0;
+  }
+  .multi-checkbox {
+    margin-right: 0.5vw;
+    pointer-events: none;
+  }
+  .drop_icon {
+    position: absolute;
+    right: 20 * $desk + vw;
+    width: 25 * $desk + vw;
+    top: 20%;
+    pointer-events: none;
+    transition: all 0.2s ease-in;
+  }
+  .list_open {
+    transform: rotate(180deg);
+  }
+
+  ul {
+    box-shadow: var(--box-shadow);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    z-index: 5;
+    li {
+      display: inline-flex;
+      align-items: center;
+      width: 100%;
+      list-style-type: none;
+      padding: 6px 20px;
+      background-color: var(--background);
+      border-bottom: 1px solid gray;
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--primary);
+        color: #ffffff;
+      }
+    }
+    li:first-child {
+      border-top-left-radius: 9px;
+      border-top-right-radius: 9px;
+    }
+    li:last-child {
+      border-bottom-left-radius: 9px;
+      border-bottom-right-radius: 9px;
+    }
+  }
+  .select-options {
+    position: absolute;
+    width: 100%;
+    // max-height: 9vw;
+    overflow: auto;
+    opacity: 0;
+    visibility: hidden;
+    border-radius: 9px;
+    transform: scale(0.01);
+    // transform: translateY(-20px);
+    // transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s;
+
+    transform-origin: center top;
+  }
+
+  .active__ {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    transform-origin: center top;
+
+    // transform: translateY(0);
+  }
+  .active_option {
+    background-color: var(--primary);
+    color: #ffffff;
+  }
+}

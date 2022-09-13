@@ -1,0 +1,33 @@
+$desk: 100/1920;
+
+.status_card {
+  height: 100%;
+  h1 {
+    font-size: 20 * $desk + vw;
+  }
+  i {
+    cursor: pointer;
+  }
+  .stat_data {
+    // overflow: auto;
+    height: 85%;
+    margin-top: 15 * $desk + vw;
+    .status {
+      display: flex;
+      justify-content: space-between;
+      font-size: 16 * $desk + vw;
+      padding: 10 * $desk + vw 0;
+      margin: 10 * $desk + vw 0;
+      border-bottom: 2px solid rgba(220, 220, 220, 0.5);
+      margin-right: 1vw;
+      .active__ {
+        padding: 0 8px;
+        border-radius: 8px;
+        color: white;
+      }
+    }
+    .flex {
+      display: flex;
+    }
+  }
+}

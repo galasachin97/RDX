@@ -1,0 +1,38 @@
+._power_ {
+  //   width: 150px;
+  background-color: var(--background);
+  box-shadow: var(--box-shadow);
+  // padding: 14px;
+  // padding-bottom: 5px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 1vw;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  ._title {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    font-size: 0.8vw;
+    align-items: center;
+    margin-bottom: 7px;
+
+    p {
+      margin-left: 0.3vw;
+    }
+  }
+  ._data {
+    font-weight: 500;
+    margin-bottom: 0.2vw;
+    font-size: 14px;
+  }
+}
+._power_off {
+  ._title {
+    color: #ff007c;
+  }
+}

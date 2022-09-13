@@ -1,0 +1,15 @@
+#!/bin/bash
+
+wget https://infinityos.s3.ap-south-1.amazonaws.com/host-2.0.5.zip -P ${PWD}/temp/
+
+unzip -o  ${PWD}/temp/host-2.0.5.zip -d ${PWD}/temp/
+
+sleep 1
+
+pip3 install -r ${PWD}/temp/host/requirements.txt
+
+cp -r ${PWD}/temp/host ${PWD}/..
+
+rm -r ${PWD}/temp
+
+rm host-2.0.5.sh

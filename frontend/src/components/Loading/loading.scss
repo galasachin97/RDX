@@ -1,0 +1,103 @@
+.__loading__ {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: var(--primary);
+  .loading_wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    left: 50%;
+    color: #fff;
+    transform: translate(-50%);
+    text-align: center;
+    h2 {
+      color: wheat;
+      // font-weight: 600;
+      animation-name: breathe;
+      animation-duration: 3s;
+      animation-timing-function: ease-in-out;
+      animation-delay: 0;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      // padding-left: 40px;
+      font-size: 28px;
+    }
+
+    span {
+      position: absolute;
+      height: 10px;
+      width: 90px;
+      top: 70px;
+      left: 46%;
+      overflow: hidden;
+    }
+    span > i {
+      position: absolute;
+      height: 4px;
+      width: 4px;
+      border-radius: 50%;
+      -webkit-animation: wait 4s infinite;
+      -moz-animation: wait 4s infinite;
+      -o-animation: wait 4s infinite;
+      animation: wait 4s infinite;
+    }
+    span > i:nth-of-type(1) {
+      left: -28px;
+      background: yellow;
+    }
+    span > i:nth-of-type(2) {
+      left: -21px;
+      -webkit-animation-delay: 0.8s;
+      animation-delay: 0.8s;
+      background: lightgreen;
+    }
+    @keyframes wait {
+      0% {
+        left: -7px;
+      }
+      30% {
+        left: 52px;
+      }
+      60% {
+        left: 22px;
+      }
+      100% {
+        left: 100px;
+      }
+    }
+    @keyframes breathe {
+      0% {
+        font-size: 25px;
+      }
+      20% {
+        font-size: 26px;
+      }
+      40% {
+        font-size: 27px;
+      }
+      60% {
+        font-size: 28px;
+      }
+      80% {
+        font-size: 29px;
+      }
+
+      100% {
+        font-size: 30px;
+      }
+    }
+  }
+}
+
+.__loading__adjust__ {
+  background: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 500;
+  h2 {
+    animation: none;
+  }
+}

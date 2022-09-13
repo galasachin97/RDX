@@ -1,0 +1,31 @@
+$desk: 100/1920;
+._camera_details_ {
+  display: flex;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  min-height: calc(100vh - 70px);
+  .card_size {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 520 * $desk + vw;
+    position: relative;
+    min-height: 40vw;
+  }
+  .snap_card_size {
+    width: 700 * $desk + vw;
+    position: relative;
+    max-height: 625 * $desk + vw;
+    margin-left: 50 * $desk + vw;
+    padding: 30 * $desk + vw;
+    p {
+      font-size: 16 * $desk + vw;
+    }
+    .snap {
+      width: 100%;
+      height: 86%;
+      object-fit: cover;
+    }
+  }
+}

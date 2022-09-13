@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/materia/bootstrap.min.css" rel="stylesheet", type="text/css">
+  <title>Alert</title>
+</head>
+<body>
+  <br>
+  <div style="display: flex; align-items: center;justify-content: center;">
+    <div class="jumbotron">
+      <h1 class="display-2">Alert !!!</h1>
+      <div class="row">
+        <div class="col-6">
+          <h1>{{ body.Alert }}</h1>
+        </div>
+        <div class="col">
+          <h3>{{ body.Location }}</h3>
+        </div>
+      </div>
+      <hr class="my-4">
+      <table class="table table-sm">
+        <thead>
+          <tr>
+            <th scope="col">Ticket Number</th>
+            <th scope="col">Date</th>
+            <th scope="col">Time</th>
+            <th scope="col">Camera Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ body.Ticket_number }}</td>
+            <td>{{ body.Date }}</td>
+            <td>{{ body.Time }}</td>
+            <td>{{ body.Camera_name }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+$desk: 100/1920;
+
+.__add_NVR_wrapper__ {
+  ._setting_list_ {
+    .fixed_activity {
+      position: fixed;
+      top: 70px;
+      left: 70px;
+      background-color: var(--sidebar);
+      width: 18.2291666667vw;
+      height: 100%;
+      padding-top: 65 * $desk + vw;
+      ul {
+        li {
+          padding: 10px 40px;
+          font-size: 16px;
+          // cursor: pointer;
+          margin-bottom: 16px;
+        }
+      }
+      .active_stage {
+        background-color: var(--uc-option2);
+      }
+    }
+  }
+  ._grid_ {
+    position: relative;
+    flex: 1;
+    .input_style,
+    .ip_input {
+      width: 100%;
+      box-shadow: var(--box-shadow);
+    }
+    .input_style:disabled {
+      background: #f4f7fe;
+    }
+    .__input__,
+    .__IP_input__ {
+      width: 100%;
+      margin-bottom: 30 * $desk + vw;
+      label {
+        font-size: 15 * $desk + vw;
+        color: var(--text);
+      }
+    }
+    .__IP_input__ {
+      margin-bottom: 0;
+    }
+    .custom-select-container {
+      width: 100%;
+      font-size: 15 * $desk + vw;
+      margin-bottom: 30 * $desk + vw;
+      animation-fill-mode: unset;
+      .selected-text {
+        border-radius: 6px;
+        color: black;
+        padding-left: 10 * $desk + vw;
+      }
+      .drop_icon {
+        top: 50%;
+      }
+    }
+  }
+}

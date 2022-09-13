@@ -1,0 +1,344 @@
+$desk: 100/1920;
+
+.list_nvr_container {
+  display: grid;
+  --auto-grid-min-size: 12.875vw;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(var(--auto-grid-min-size), 1fr)
+  );
+  grid-gap: 32px;
+  padding-right: 5vw;
+  z-index: 8;
+  .no_camera {
+    font-size: 2vw;
+    font-weight: bold;
+  }
+
+  .nvr_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    padding: 7px;
+    // overflow: hidden;
+    // max-width: 420 * $desk + vw;
+    // max-height: 360px;
+    @media only screen and (min-width: 2000px) {
+      // max-height: 460px;
+    }
+
+    .nvr_info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .nvr_image_holder {
+        position: relative;
+        display: grid;
+        place-items: center;
+        width: 105 * $desk + vw;
+        height: 105 * $desk + vw;
+        background-color: var(--sidebar);
+        border-radius: 50%;
+        .nvr_image {
+          width: 100%;
+        }
+        .info_icon {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 28 * $desk + vw;
+          height: 28 * $desk + vw;
+          cursor: pointer;
+        }
+      }
+      .name {
+        margin-top: 18 * $desk + vw;
+        margin-bottom: 25 * $desk + vw;
+        font-weight: 600;
+        font-size: 18 * $desk + vw;
+        text-transform: capitalize;
+      }
+      .nvrDetails {
+        width: 100%;
+        perspective: 1000px;
+        height: 9vw;
+        .content {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          transform-style: preserve-3d;
+          transition: transform 0.5s;
+          .flip-card-front {
+            position: absolute;
+            // display: flex;
+            // flex-direction: column;
+            // justify-content: space-between;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+          }
+          .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            background-color: var(--background);
+            transform: rotateY(180deg);
+            // padding-top: 55 * $desk + vw;
+            // padding-left: 5 * $desk + vw;
+            // padding-right: 0 * $desk + vw;
+          }
+        }
+        .flipped {
+          transform: rotateY(180deg);
+        }
+      }
+      .nvr_full_info {
+        position: relative;
+        height: 100%;
+        width: 103%;
+        font-size: 13 * $desk + vw;
+      }
+    }
+    .nvr_info_wrapper {
+      display: grid;
+      grid-template-columns: 65% 2% 33%;
+      margin-bottom: 12 * $desk + vw;
+      padding: 0 10 * $desk + vw;
+      ._title {
+        font-size: 17 * $desk + vw;
+        // margin-right: 5 * $desk + vw;
+      }
+      ._data {
+        position: relative;
+        background-color: var(--sidebar);
+        border-radius: 5px;
+        // padding: 5 * $desk + vw;
+        font-size: 17 * $desk + vw;
+        align-self: baseline;
+        word-break: break-all;
+        padding-left: 8 * $desk + vw;
+        padding-right: 8 * $desk + vw;
+        // align-self: stretch;
+      }
+      .dot_ {
+        font-size: 18 * $desk + vw;
+      }
+      .info_icon {
+        position: absolute;
+        right: 1vw;
+        width: 0.8vw;
+        transform: translateY(-50%);
+        top: 50%;
+      }
+      .hover_data {
+        position: absolute;
+        // background-color: yellowgreen;
+        width: 170 * $desk + vw;
+        z-index: 22;
+        right: 50%;
+        display: none;
+        top: -4vw;
+        padding-right: 0.5vw;
+        z-index: 5;
+      }
+      .hover_data_content {
+        z-index: 4;
+        background-color: var(--sidebar);
+        padding: 10 * $desk + vw 0;
+        border-radius: 6px;
+      }
+    }
+    .nvr_adjust {
+      grid-template-columns: 40% 55%;
+    }
+
+    .dot_icon {
+      position: absolute;
+      right: 10 * $desk + vw;
+      top: 16 * $desk + vw;
+      padding: 4px 3px;
+      backdrop-filter: blur(10px);
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 8px;
+      cursor: pointer;
+      @media only screen and (min-width: 2000px) {
+        width: 14 * $desk + vw;
+      }
+    }
+    .floating_menu {
+      position: absolute;
+      right: 1.5vw;
+      top: 13 * $desk + vw;
+      width: 200 * $desk + vw;
+      padding: 6 * $desk + vw 8 * $desk + vw;
+      padding-right: 25 * $desk + vw;
+      padding-bottom: 0 * $desk + vw;
+      background-color: var(--body-background);
+      border-radius: 8px;
+      height: auto;
+      overflow: hidden;
+      z-index: 1;
+      box-shadow: var(--app-box-shadow);
+
+      .dots:after {
+        content: "\2807";
+        font-size: 20px;
+      }
+
+      button {
+        width: 100%;
+        font-size: 15 * $desk + vw;
+        padding: 4 * $desk + vw 8 * $desk + vw;
+        text-align: left;
+        margin-bottom: 6px;
+        background-color: var(--sidebar);
+        border: 0;
+        cursor: pointer;
+        color: var(--text);
+        white-space: nowrap;
+      }
+      button:active {
+        animation: press 0.2s 1 linear;
+      }
+    }
+    .dot_icon_active {
+      position: absolute;
+      right: 0 * $desk + vw;
+      top: 3 * $desk + vw;
+      padding: 4 * $desk + vw 3 * $desk + vw;
+      cursor: pointer;
+      border-radius: 8px;
+      filter: contrast(0.5);
+      width: 0.7vw;
+      @media only screen and (min-width: 2000px) {
+        width: 14 * $desk + vw;
+      }
+    }
+    .dot_adjust {
+      right: 1.5vw;
+      width: 0.7vw;
+      top: 0.8vw;
+      @media only screen and (min-width: 2000px) {
+        width: 0.7vw;
+      }
+    }
+    .exit_float_menu {
+      width: 0 !important;
+      padding: 0 !important;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .material-icons {
+      font-size: 24 * $desk + vw;
+    }
+  }
+  .pop_adjust__ {
+    align-items: center;
+    z-index: 17;
+    .modal {
+      align-self: center;
+      width: 850 * $desk + vw;
+      height: auto;
+      position: relative;
+      margin: 0;
+      padding: 8 * $desk + vw 100 * $desk + vw;
+      padding-bottom: 30 * $desk + vw;
+      overflow: hidden;
+      h1 {
+        text-align: center;
+        font-size: 18 * $desk + vw;
+        margin-top: 20 * $desk + vw;
+        margin-bottom: 40 * $desk + vw;
+      }
+      .material-icons {
+        font-size: 18 * $desk + vw;
+        vertical-align: middle;
+      }
+      .close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        background-color: var(--primary);
+        padding: 8 * $desk + vw;
+        border-bottom-left-radius: 8px;
+        border-top-right-radius: 12px;
+        cursor: pointer;
+        padding-bottom: 8 * $desk + vw;
+        padding-top: 4 * $desk + vw;
+      }
+    }
+    .input_style,
+    .ip_input {
+      // width: 80%;
+      width: unset;
+      box-shadow: var(--box-shadow);
+    }
+    .input_style:disabled {
+      background: #f4f7fe;
+    }
+    .__input__,
+    .__IP_input__ {
+      width: 50%;
+      margin-bottom: 30 * $desk + vw;
+      padding: 0 1.3vw;
+
+      label {
+        font-size: 14 * $desk + vw;
+        color: var(--text);
+      }
+      .icon-toggle {
+        right: 1.5vw;
+      }
+    }
+    .__IP_input__ {
+      width: 50%;
+      .__input__ {
+        padding: 0;
+        width: 100%;
+        margin-bottom: 0;
+      }
+    }
+    .modal_back {
+      color: #00ccf2;
+      margin-right: 60 * $desk + vw;
+      font-size: 16 * $desk + vw;
+      cursor: pointer;
+    }
+    .editIcon {
+      position: absolute;
+      right: 1.8vw;
+      top: 70%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      width: 1.2vw;
+      height: 1.2vw;
+    }
+    .__IP_input__ {
+      .editIcon {
+        right: 0.6vw;
+      }
+    }
+    #NVRName,
+    #password {
+      padding-right: 2vw;
+    }
+    .hard_header {
+      margin-left: 1.3vw;
+      margin-bottom: 30 * $desk + vw;
+      font-weight: 600;
+      font-size: 15 * $desk + vw;
+      color: #0068bb;
+    }
+    .hardware_wrapper {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 1.3vw;
+      .__input__ {
+        width: 30%;
+        padding: 0;
+      }
+    }
+  }
+}

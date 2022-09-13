@@ -1,0 +1,55 @@
+$desk: 100/1920;
+
+.__input__ {
+  position: relative;
+  margin-bottom: 10 * $desk + vw;
+  display: flex;
+  flex-direction: column;
+  // width: 340px;
+  label {
+    font-size: 18 * $desk + vw;
+    color: #818181;
+  }
+  .input_style {
+    height: 40 * $desk + vw;
+    width: 340px;
+    outline-color: var(--primary);
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 0;
+    padding: 0 10px;
+    font-size: 16 * $desk + vw;
+  }
+  .input_style:disabled {
+    background: #fff;
+  }
+  .input__error {
+    text-align: left;
+    // color: red;
+    margin-bottom: 0;
+  }
+  .icon-toggle {
+    position: absolute;
+    width: 22 * $desk + vw;
+    top: 72%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    opacity: 0.6;
+    // @media only screen and (max-width: 900px) {
+    //   top: 58%;
+    //   left: 87%;
+    // }
+  }
+  ._tooltip_container_ {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .helperText {
+    color: red;
+    font-size: 14 * $desk + vw;
+    margin-left: 10px;
+    margin-top: 5px;
+  }
+}

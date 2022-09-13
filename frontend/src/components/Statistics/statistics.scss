@@ -1,0 +1,51 @@
+$desk: 100/1920;
+
+.statistics_card {
+  width: 100%;
+  // .adjust_dd {
+  //   position: absolute;
+  //   right: 0;
+  //   top: 10 * $desk + vw;
+  //   width: 30%;
+  //   --body-background: #ffffff;
+  //   color: var(--text) !important;
+  //   margin-top: 10 * $desk + vw;
+  //   .dd-label {
+  //     font-size: 12 * $desk + vw;
+  //   }
+  //   .selected-text {
+  //     background: transparent;
+  //     font-family: PoppinsBold;
+  //     box-shadow: unset;
+  //     padding-left: 0;
+  //     font-size: 14 * $desk + vw;
+  //     text-transform: capitalize;
+  //   }
+  //   li {
+  //     font-size: 13 * $desk + vw;
+  //     text-transform: capitalize;
+  //   }
+  //   .custom-select-option {
+  //     font-size: 12 * $desk + vw;
+  //   }
+  //   .drop_icon {
+  //     filter: var(--icon-color-invert);
+  //     top: 50%;
+  //   }
+  // }
+  .filter_name {
+    color: var(--text);
+    width: 2vw;
+    text-align: center;
+    background-color: #f4f7fe;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 6px;
+    color: white;
+  }
+  .open_in_full {
+    color: var(--text);
+    margin-left: 1.2vw;
+    cursor: pointer;
+  }
+}

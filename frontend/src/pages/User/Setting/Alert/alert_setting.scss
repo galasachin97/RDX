@@ -1,0 +1,87 @@
+$desk: 100/1920;
+
+.__alert_setting_ {
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-bottom: 30px;
+  min-height: calc(100vh - 70px);
+  margin-right: 2vw;
+  // margin-bottom: 2vw;
+
+  .card_size_alert {
+    // display: flex;
+    // flex-wrap: wrap;
+    // gap: 2vw;
+    // // width: 520 * $desk + vw;
+    position: relative;
+
+    min-height: 40vw;
+    padding: 1.8229166667vw 0;
+    padding-bottom: 5vw;
+    .alert_card_holder {
+      display: grid;
+      --auto-grid-min-size: 19.875vw;
+      grid-template-columns: repeat(
+        auto-fill,
+        minmax(var(--auto-grid-min-size), 1fr)
+      );
+      padding: 0 1vw;
+      padding-top: 0.3vw;
+      grid-template-rows: auto 1fr auto;
+      grid-gap: 32px;
+    }
+    .selected-text {
+      padding-right: 2vw;
+    }
+    .custom-multi-select-container .drop_icon {
+      right: 0.38vw;
+    }
+  }
+}
+
+._uc_card_ {
+  // width: 19.8vw;
+  margin-bottom: 18 * $desk + vw;
+  box-shadow: var(--card-box-shadow);
+  background: var(--background);
+  align-self: flex-start;
+  border-radius: 15px;
+  justify-self: center;
+  padding: 1vw;
+  .header {
+    font-size: 18 * $desk + vw;
+    font-weight: 600;
+    margin-bottom: 1vw;
+    text-transform: capitalize;
+    color: var(--text);
+  }
+  .dd-label {
+    color: #309bdb;
+    font-weight: 600;
+  }
+  ._flex {
+    display: flex;
+    justify-content: space-between;
+
+    .custom-select-container {
+      width: 160 * $desk + vw !important;
+
+      .drop_icon {
+        right: 0;
+      }
+      .selected-text {
+        font-size: 14 * $desk + vw;
+        padding: 9 * $desk + vw 10 * $desk + vw;
+      }
+    }
+
+    .custom-multi-select-container {
+      margin-left: 1vw;
+      width: 10vw;
+      #Action {
+        width: 10vw;
+        padding-right: 45 * $desk + vw;
+      }
+    }
+  }
+}

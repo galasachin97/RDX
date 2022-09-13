@@ -1,0 +1,15 @@
+$desk: 100/1920;
+
+._network_setting_ {
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-bottom: 30px;
+  min-height: calc(100vh - 70px);
+  .card_size {
+    width: 400 * $desk + vw;
+    position: relative;
+    padding-bottom: 8vw;
+    min-height: 20vw;
+    padding-right: 5vw;
+  }
+}

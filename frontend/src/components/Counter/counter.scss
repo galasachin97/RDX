@@ -1,0 +1,51 @@
+$desk: 100/1920;
+
+.counter_wrapper_ {
+  .counter_label {
+    font-size: 0.78125vw;
+    margin-bottom: 0.2vw;
+  }
+  .counter {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5625vw;
+    position: relative;
+    .counter_text {
+      margin: 0 5 * $desk + vw;
+      width: 70 * $desk + vw;
+      align-self: normal;
+      outline-color: var(--primary);
+      text-align: center;
+      font-size: 18 * $desk + vw;
+      border: 0;
+      box-shadow: var(--box-shadow);
+      border-radius: 6px;
+    }
+    .counter_btn {
+      border: 0;
+      font-size: 15 * $desk + vw;
+      border-radius: 50%;
+      width: 30 * $desk + vw;
+      height: 30 * $desk + vw;
+      line-height: 32 * $desk + vw;
+      cursor: pointer;
+      background-color: var(--primary);
+      color: white;
+      font-size: 20 * $desk + vw;
+    }
+    .counter_btn:active {
+      animation: press 0.2s 1 linear;
+    }
+  }
+  .c_holder {
+    position: relative;
+    display: inline-block;
+    .sub {
+      position: absolute;
+      bottom: 0.3vw;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.62vw;
+    }
+  }
+}

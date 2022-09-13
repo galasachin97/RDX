@@ -1,0 +1,343 @@
+{
+  "Services": [
+    {
+      "Service_id": "Weapon_Detection",
+      "Service_name": "Weapon_Detection",
+      "Description": "desc",
+      "Status": "Inactive",
+      "Category": "Usecase",
+      "Dependent_services": {
+        "AI": ["Weapon_Detection_AI"],
+        "Usecase": [],
+        "Analytics": [],
+        "Base": [],
+        "Firmware": [],
+        "Database": []
+      }
+    },
+    {
+      "Service_id": "No_Mask_Detection",
+      "Service_name": "No_Mask_Detection",
+      "Description": "desc",
+      "Status": "Inactive",
+      "Category": "Usecase",
+      "Dependent_services": {
+        "AI": ["Weapon_Detection_AI"],
+        "Usecase": [],
+        "Analytics": [],
+        "Base": [],
+        "Firmware": [],
+        "Database": []
+      }
+    },
+    {
+      "Service_id": "Early_Camera_Tampering",
+      "Service_name": "Early_Camera_Tampering",
+      "Description": "desc",
+      "Status": "Inactive",
+      "Category": "Usecase",
+      "Dependent_services": {
+        "AI": ["Weapon_Detection_AI"],
+        "Usecase": [],
+        "Analytics": [],
+        "Base": [],
+        "Firmware": [],
+        "Database": []
+      }
+    },
+    {
+      "Service_id": "Without_Helmet",
+      "Service_name": "Without_Helmet",
+      "Description": "desc",
+      "Status": "Inactive",
+      "Category": "Usecase",
+      "Dependent_services": {
+        "AI": ["Weapon_Detection_AI", "Vehicle_Classification_AI"],
+        "Usecase": [],
+        "Analytics": [],
+        "Base": [],
+        "Firmware": [],
+        "Database": []
+      }
+    },
+    {
+      "Service_id": "Loitering_Idling",
+      "Service_name": "Loitering_Idling",
+      "Description": "desc",
+      "Status": "Inactive",
+      "Category": "Usecase",
+      "Dependent_services": {
+        "AI": ["Person_Detection_AI"],
+        "Usecase": [],
+        "Analytics": [],
+        "Base": [],
+        "Firmware": [],
+        "Database": []
+      }
+    },
+    {
+      "Service_id": "People_Exceeeded_Alert",
+      "Service_name": "People_Exceeeded_Alert",
+      "Description": "desc",
+      "Status": "Inactive",
+      "Category": "Usecase",
+      "Dependent_services": {
+        "AI": ["Person_Detection_AI"],
+        "Usecase": [],
+        "Analytics": [],
+        "Base": [],
+        "Firmware": [],
+        "Database": []
+      }
+    },
+    {
+      "Service_id": "Tresspass_Detection",
+      "Service_name": "Tresspass_Detection",
+      "Description": "desc",
+      "Status": "Inactive",
+      "Category": "Usecase",
+      "Dependent_services": {
+        "AI": ["Person_Detection_AI"],
+        "Usecase": [],
+        "Analytics": [],
+        "Base": [],
+        "Firmware": [],
+        "Database": []
+      }
+    },
+    {
+      "Service_id": "Person_Missing_Detection",
+      "Service_name": "Person_Missing_Detection",
+      "Description": "desc",
+      "Status": "Inactive",
+      "Category": "Usecase",
+      "Dependent_services": {
+        "AI": ["Person_Detection_AI"],
+        "Usecase": [],
+        "Analytics": [],
+        "Base": [],
+        "Firmware": [],
+        "Database": []
+      }
+    },
+    {
+      "Service_id": "Child_Near_Gate",
+      "Service_name": "Child_Near_Gate",
+      "Description": "desc",
+      "Status": "Inactive",
+      "Category": "Usecase",
+      "Dependent_services": {
+        "AI": ["Person_Detection_AI"],
+        "Usecase": [],
+        "Analytics": [],
+        "Base": [],
+        "Firmware": [],
+        "Database": []
+      }
+    },
+    {
+      "Service_id": "Child_alone_near_swimming_pool",
+      "Service_name": "Child_alone_near_swimming_pool",
+      "Description": "desc",
+      "Status": "Inactive",
+      "Category": "Usecase",
+      "Dependent_services": {
+        "AI": ["Person_Detection_AI"],
+        "Usecase": [],
+        "Analytics": [],
+        "Base": [],
+        "Firmware": [],
+        "Database": []
+      }
+    },
+    {
+      "Service_id": "Child_alone_in_lift",
+      "Service_name": "Child_alone_in_lift",
+      "Description": "desc",
+      "Status": "Inactive",
+      "Category": "Usecase",
+      "Dependent_services": {
+        "AI": ["Person_Detection_AI"],
+        "Usecase": [],
+        "Analytics": [],
+        "Base": [],
+        "Firmware": [],
+        "Database": []
+      }
+    },
+    {
+      "Service_id": "Person_falling_on_ground",
+      "Service_name": "Person_falling_on_ground",
+      "Description": "desc",
+      "Status": "Inactive",
+      "Category": "Usecase",
+      "Dependent_services": {
+        "AI": ["Person_Detection_AI"],
+        "Usecase": [],
+        "Analytics": [],
+        "Base": [],
+        "Firmware": [],
+        "Database": []
+      }
+    },
+    {
+      "Service_id": "Person_not_moving",
+      "Service_name": "Person_not_moving",
+      "Description": "desc",
+      "Status": "Inactive",
+      "Category": "Usecase",
+      "Dependent_services": {
+        "AI": ["Person_Detection_AI"],
+        "Usecase": [],
+        "Analytics": [],
+        "Base": [],
+        "Firmware": [],
+        "Database": []
+      }
+    },
+    {
+      "Service_id": "Person_moving_in_wrong_direction",
+      "Service_name": "Person_moving_in_wrong_direction",
+      "Description": "desc",
+      "Status": "Inactive",
+      "Category": "Usecase",
+      "Dependent_services": {
+        "AI": ["Person_Detection_AI"],
+        "Usecase": [],
+        "Analytics": [],
+        "Base": [],
+        "Firmware": [],
+        "Database": []
+      }
+    },
+    {
+      "Service_id": "Person_present_outside_the_ROI",
+      "Service_name": "Person_present_outside_the_ROI",
+      "Description": "desc",
+      "Status": "Inactive",
+      "Category": "Usecase",
+      "Dependent_services": {
+        "AI": ["Person_Detection_AI"],
+        "Usecase": [],
+        "Analytics": [],
+        "Base": [],
+        "Firmware": [],
+        "Database": []
+      }
+    },
+    {
+      "Service_id": "Min_and_max_allowed_people_inside_frame",
+      "Service_name": "Min_and_max_allowed_people_inside_frame",
+      "Description": "desc",
+      "Status": "Inactive",
+      "Category": "Usecase",
+      "Dependent_services": {
+        "AI": ["Person_Detection_AI"],
+        "Usecase": [],
+        "Analytics": [],
+        "Base": [],
+        "Firmware": [],
+        "Database": []
+      }
+    },
+    {
+      "Service_id": "Fire_Spark_Detection",
+      "Service_name": "Fire_Spark_Detection",
+      "Description": "desc",
+      "Status": "Inactive",
+      "Category": "Usecase",
+      "Dependent_services": {
+        "AI": ["Fire_Detection_AI"],
+        "Usecase": [],
+        "Analytics": [],
+        "Base": [],
+        "Firmware": [],
+        "Database": []
+      }
+    },
+    {
+      "Service_id": "Automatic_Ticket_Generation",
+      "Service_name": "Automatic_Ticket_Generation",
+      "Description": "desc",
+      "Status": "Inactive",
+      "Category": "Usecase",
+      "Dependent_services": {
+        "AI": [
+          "License_Plate_Detection",
+          "Vehicle_Classification",
+          "License_Plate_Recognition"
+        ],
+        "Usecase": [],
+        "Analytics": [],
+        "Base": [],
+        "Firmware": [],
+        "Database": []
+      }
+    },
+    {
+      "Service_id": "Average_Waiting_time_in_a_queue",
+      "Service_name": "Average_Waiting_time_in_a_queue",
+      "Description": "desc",
+      "Status": "Inactive",
+      "Category": "Usecase",
+      "Dependent_services": {
+        "AI": ["Person_Detection_AI"],
+        "Usecase": [],
+        "Analytics": [],
+        "Base": [],
+        "Firmware": [],
+        "Database": []
+      }
+    },
+    {
+      "Service_id": "Social_Distancing",
+      "Service_name": "Social_Distancing",
+      "Description": "desc",
+      "Status": "Inactive",
+      "Category": "Usecase",
+      "Dependent_services": {
+        "AI": ["Person_Detection_AI"],
+        "Usecase": [],
+        "Analytics": [],
+        "Base": [],
+        "Firmware": [],
+        "Database": []
+      }
+    },
+    {
+      "Service_id": "Safety_Gear_Missing_Alert",
+      "Service_name": "Safety_Gear_Missing_Alert",
+      "Description": "desc",
+      "Status": "Inactive",
+      "Category": "Usecase",
+      "Dependent_services": {
+        "AI": ["Person_Detection_AI", "Safety_Gear_Detection"],
+        "Usecase": [],
+        "Analytics": [],
+        "Base": [],
+        "Firmware": [],
+        "Database": []
+      }
+    },
+    {
+      "Service_id": "Container_Number_Extraction",
+      "Service_name": "Container_Number_Extraction",
+      "Description": "desc",
+      "Status": "Inactive",
+      "Category": "Usecase",
+      "Dependent_services": {
+        "AI": [
+          "Vehicle_Classification",
+          "License_Plate_Detection",
+          "Container_Detection",
+          "Container_Number_Recognition"
+        ],
+        "Usecase": [],
+        "Analytics": [],
+        "Base": [],
+        "Firmware": [],
+        "Database": []
+      }
+    }
+  ]
+}

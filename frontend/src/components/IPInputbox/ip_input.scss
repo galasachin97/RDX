@@ -1,0 +1,33 @@
+$desk: 100/1920;
+
+.__IP_input__ {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  .ip_label {
+    font-size: 14px;
+  }
+  .ip_input {
+    background-color: white;
+    border: 0;
+    border-radius: 10px;
+    min-height: 35px;
+    width: 160px;
+    font-size: 16px !important;
+    margin-top: 5px;
+    padding-left: 10px;
+    outline-color: var(--primary);
+  }
+  .error_text {
+    color: red;
+    font-size: 12px;
+    padding: 5px;
+    padding-bottom: 0;
+  }
+}
+.input__error {
+  border: 1px solid rgb(255, 78, 78) !important;
+  input {
+    border: 1px solid rgb(255, 78, 78) !important;
+  }
+}

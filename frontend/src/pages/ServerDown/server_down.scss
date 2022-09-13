@@ -1,0 +1,221 @@
+$green: #008744;
+$blue: #0057e7;
+$red: #d62d20;
+$yellow: #ffa700;
+$white: #eee;
+
+.ServerDown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  font-family: "Poppins";
+  gap: 6vw;
+  .message-box {
+    min-width: 300px;
+    color: var(--text);
+    font-weight: 300;
+    h1 {
+      font-size: 60px;
+      line-height: 46px;
+      margin-bottom: 40px;
+    }
+    p {
+      font-size: 30px;
+    }
+    .buttons-con .action-link-wrap {
+      display: flex;
+      margin-top: 40px;
+      .btn {
+        width: unset;
+        padding: 0 10px;
+      }
+    }
+  }
+  #Polygon-1,
+  #Polygon-2,
+  #Polygon-3,
+  #Polygon-4,
+  #Polygon-4,
+  #Polygon-5 {
+    animation: float 1s infinite ease-in-out alternate;
+  }
+  #Polygon-2 {
+    animation-delay: 0.2s;
+  }
+  #Polygon-3 {
+    animation-delay: 0.4s;
+  }
+  #Polygon-4 {
+    animation-delay: 0.6s;
+  }
+  #Polygon-5 {
+    animation-delay: 0.8s;
+  }
+
+  @keyframes float {
+    100% {
+      transform: translateY(20px);
+    }
+  }
+  @media (max-width: 450px) {
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -250px;
+      margin-left: -190px;
+    }
+    .message-box {
+      top: 50%;
+      left: 50%;
+      margin-top: -100px;
+      margin-left: -190px;
+      text-align: center;
+    }
+  }
+}
+
+.restart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background: #090d00;
+  color: rgba(255, 255, 255, 0.25);
+  text-align: center;
+  font: 700 4em/1 "Oswald", sans-serif;
+  overflow: hidden;
+  .company {
+    letter-spacing: 0;
+    padding: 0.25em 0 0.325em;
+    display: block;
+    margin: 0 auto;
+    text-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
+
+    /* Clip Background Image */
+
+    background: url("../../assets/images/animated-text-fill.png") repeat-y;
+    background-clip: text;
+
+    /* Animate Background Image */
+
+    -webkit-text-fill-color: transparent;
+    animation: aitf 80s linear infinite;
+
+    /* Activate hardware acceleration for smoother animations */
+
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+  }
+  .circle-background {
+    stroke: #ddd;
+    fill: none;
+  }
+
+  .circle-progress {
+    stroke: #ee5100;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    transition: stroke-dashoffset 0.8s;
+  }
+
+  .circular {
+    animation: rotate 2s linear infinite;
+    transform-origin: center center;
+    width: 450px;
+    position: absolute;
+  }
+
+  .path {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+    animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+    stroke-linecap: round;
+  }
+  .shutdown {
+    position: absolute;
+    bottom: 18%;
+    font-size: 3vw;
+    color: #eee;
+    animation-name: breathe;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}
+
+@keyframes breathe {
+  0% {
+    font-size: 25px;
+  }
+  20% {
+    font-size: 26px;
+  }
+  40% {
+    font-size: 27px;
+  }
+  60% {
+    font-size: 28px;
+  }
+  80% {
+    font-size: 29px;
+  }
+
+  100% {
+    font-size: 30px;
+  }
+}
+
+@keyframes color {
+  100%,
+  0% {
+    stroke: $red;
+  }
+  40% {
+    stroke: $blue;
+  }
+  66% {
+    stroke: $green;
+  }
+  80%,
+  90% {
+    stroke: $yellow;
+  }
+}
+
+@keyframes aitf {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}

@@ -1,0 +1,96 @@
+._timezone_ {
+  // width: 330px;
+  border-radius: 15px;
+  background-color: #39d5cf;
+  height: 100%;
+  box-shadow: var(--box-shadow);
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+
+  .time {
+    padding: 10px 0 15px 0;
+    margin: 0 20px;
+    border-bottom: 1px solid #fff;
+    h2 {
+      font-size: 20px;
+      font-family: PoppinsBold;
+      color: #fff;
+      margin-top: 14px;
+    }
+    h3 {
+      font-size: 30px;
+      color: #afeeec;
+      font-weight: 100;
+      padding-top: 0.4vw;
+    }
+    h1 {
+      font-size: 2.2vw;
+      font-family: PoppinsBold;
+      color: #fff;
+      letter-spacing: 0.2vw;
+      span {
+        font-size: 25px;
+        position: relative;
+        top: -20px;
+      }
+    }
+  }
+  .time_selector {
+    padding: 10px 20px;
+    padding-bottom: 40px;
+    p {
+      font-size: 20px;
+      color: #fff;
+      padding-top: 0.2vw;
+    }
+    ._flex {
+      display: flex;
+      justify-content: space-between;
+      ._time {
+        width: 75%;
+        background-color: white;
+        color: black;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        border-radius: 6px;
+        padding: 0.3875vw 0.5208333333vw;
+      }
+      .arrow_ {
+        box-shadow: var(--card-box-shadow);
+        background: var(--body-background);
+        border-radius: 100%;
+        transform: rotate(-45deg);
+        transition: transform 0.3s ease-in-out;
+        cursor: pointer;
+        padding: 0.5vw;
+        &:hover {
+          transform: rotate(0deg);
+        }
+      }
+    }
+    // .adjust_dd {
+    //   width: 100%;
+    //   .select-options {
+    //     border-radius: 12px;
+    //   }
+    //   .selected-text {
+    //     border-radius: 12px;
+    //     color: #a5a4bf;
+    //   }
+    //   li:first-child {
+    //     border-top-left-radius: 12px;
+    //     border-top-right-radius: 12px;
+    //   }
+    //   .drop_icon {
+    //     width: 40px;
+    //     opacity: 0.5;
+    //     top: 0;
+    //     right: 10px;
+    //   }
+    // }
+  }
+}

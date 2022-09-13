@@ -1,0 +1,255 @@
+$desk: 100/1920;
+
+._privacy_setting_ {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  min-height: calc(100vh - 70px);
+  .card_size {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 520 * $desk + vw;
+    position: relative;
+    min-height: 40vw;
+    .sheild {
+      width: 100 * $desk + vw;
+      margin-bottom: 50 * $desk + vw;
+    }
+    .head {
+      margin-bottom: 1vw;
+    }
+    .p {
+      align-self: flex-start;
+      margin-bottom: 1vw;
+      font-size: 15 * $desk + vw;
+    }
+    .checkk {
+      display: flex;
+      align-items: baseline;
+      margin-bottom: 1vw;
+      .label_ {
+        margin-left: 1vw;
+        font-size: 15 * $desk + vw;
+        cursor: pointer;
+      }
+    }
+    .check {
+      margin-bottom: 2vw;
+      margin-top: 2vw;
+      input[type="checkbox"] + label {
+        display: block;
+        margin: 0.2em;
+        cursor: pointer;
+        padding: 0.2em;
+        font-size: 12 * $desk + vw;
+      }
+
+      input[type="checkbox"] {
+        display: none;
+      }
+
+      input[type="checkbox"] + label:before {
+        content: "\2714";
+        border: 0.1em solid #000;
+        border-radius: 0.2em;
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        padding-left: 0.2em;
+        padding-bottom: 0.3em;
+        margin-right: 1.2em;
+        vertical-align: bottom;
+        color: transparent;
+        transition: 0.2s;
+      }
+
+      input[type="checkbox"] + label:active:before {
+        transform: scale(0);
+      }
+
+      input[type="checkbox"]:checked + label:before {
+        background-color: MediumSeaGreen;
+        border-color: MediumSeaGreen;
+        color: #fff;
+      }
+
+      input[type="checkbox"]:disabled + label:before {
+        transform: scale(1);
+        border-color: #aaa;
+      }
+
+      input[type="checkbox"]:checked:disabled + label:before {
+        transform: scale(1);
+        background-color: #bfb;
+        border-color: #bfb;
+      }
+    }
+  }
+
+  .user_auth_modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    z-index: 100;
+
+    .custom-select-container {
+      width: 100%;
+      font-size: 15 * $desk + vw;
+      margin-bottom: 30 * $desk + vw;
+
+      .selected-text {
+        --text: #000;
+        border-radius: 6px;
+      }
+      .drop_icon {
+        top: 50%;
+      }
+    }
+    .dropdown {
+      margin-top: 0.4vw;
+      position: relative;
+      z-index: 15;
+      p:first-child {
+        padding-bottom: 0.5vw;
+        padding-left: 0.5vw;
+      }
+      .dropdown-content {
+        background-color: lightyellow;
+        width: 100%;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        padding: 0.5vw;
+        border-radius: 1vw;
+        font-size: 1vw;
+        position: absolute;
+        bottom: 4vw;
+        z-index: 1;
+
+        /* Add a red text color and an "x" when the requirements are wrong */
+        .invalid {
+          color: red;
+        }
+        .invalid:before {
+          margin: 0.2vw 1vw;
+          content: "✖";
+        }
+
+        /* Add a green text color and a checkmark when the requirements are right */
+        .valid {
+          color: green;
+        }
+        .valid:before {
+          margin: 0.2vw 1vw;
+          content: "✔";
+        }
+      }
+    }
+  }
+  .pass_container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20vw;
+    background: var(--body-background);
+    align-self: center;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--card-box-shadow);
+    h1 {
+      text-align: center;
+      margin: 0.5vw 0;
+      margin-top: 0;
+    }
+    .close_icon {
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      color: var(--text);
+      cursor: pointer;
+    }
+    .close_icon:active {
+      animation: press 0.2s 1 linear;
+    }
+    .dropdown {
+      margin-top: 0.4vw;
+      position: relative;
+      align-self: normal;
+      p:first-child {
+        padding-bottom: 0.5vw;
+        padding-left: 0.5vw;
+      }
+      .dropdown-content {
+        background-color: lightyellow;
+        width: 100%;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        padding: 0.5vw;
+        border-radius: 1vw;
+        font-size: 1vw;
+        position: absolute;
+        top: -0.4vw;
+        z-index: 1;
+
+        /* Add a red text color and an "x" when the requirements are wrong */
+        .invalid {
+          color: red;
+        }
+        .invalid:before {
+          margin: 0.2vw 1vw;
+          content: "✖";
+        }
+
+        /* Add a green text color and a checkmark when the requirements are right */
+        .valid {
+          color: green;
+        }
+        .valid:before {
+          margin: 0.2vw 1vw;
+          content: "✔";
+        }
+      }
+    }
+  }
+  .otpContainer {
+    display: flex;
+    justify-content: space-between;
+    margin: 45px 0;
+    flex-wrap: wrap;
+    .otpInput {
+      width: 35px;
+      height: 35px;
+      border: 2px solid #309bdb;
+      border-radius: 5px;
+      outline-color: var(--primary);
+      font-size: 16px;
+      text-align: center;
+    }
+  }
+  ._counter {
+    font-size: 35 * $desk + vw;
+    color: var(--primary);
+    text-align: center;
+    margin: 15px 0;
+  }
+  .resend__ {
+    text-align: center;
+    margin: 15px 0;
+    span {
+      cursor: pointer;
+      color: var(--primary);
+    }
+  }
+  .disabled {
+    color: #aaaaaa !important;
+    text-decoration: none !important;
+    cursor: auto !important;
+  }
+}

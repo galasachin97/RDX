@@ -1,0 +1,7 @@
+__pycache__
+.vscode
+envs
+config
+# config/metadata.json
+test
+venv

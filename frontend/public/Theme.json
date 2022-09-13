@@ -1,0 +1,13 @@
+{
+    "label": "Diycam",
+    "logo_white_theme": "/static_server/theme/default/logo.png",
+    "logo_black_theme": "/static_server/theme/default/logo_dark.png",
+    "startup_video": "/static_server/theme/default/Splash_Screen.mp4",
+    "favicon": "/static_server/theme/default/favicon.ico",
+    "primary_colour": "#013aa2",
+    "secondary_colour": "#2d62ed",
+    "button_colour1": "#00b4ff",
+    "button_colour2_primary": "#0083c9",
+    "button_colour2_secondary": "#0064b9",
+    "status": true
+}

@@ -1,0 +1,9 @@
+{
+  "details": {
+    "Limitations": {
+      "Camera": 2,
+      "Deepstream": 1,
+      "Usecase": 4
+    }
+  }
+}

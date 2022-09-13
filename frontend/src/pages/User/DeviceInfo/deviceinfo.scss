@@ -1,0 +1,534 @@
+$desk: 100/1920;
+
+.__device_info_wrapper__ {
+  ._setting_list_ {
+    height: 93vh;
+    .fixed_activity {
+      position: fixed;
+      top: 70px;
+      left: 70px;
+      background-color: var(--sidebar);
+      width: 18.2291666667vw;
+      height: 93vh;
+      padding-top: 65 * $desk + vw;
+      ul {
+        li {
+          padding: 10px 40px;
+          font-size: 16px;
+          cursor: pointer;
+          margin-bottom: 16px;
+          color: var(--text);
+        }
+      }
+      .active_stage {
+        background-color: var(--uc-option2);
+      }
+    }
+  }
+  ._grid_ {
+    position: relative;
+    // left: 350px;
+    padding-bottom: 2vw;
+    width: calc(100vw - 440px);
+    ._time_setting_ {
+      display: flex;
+      .card_size {
+        margin-right: 30px;
+        padding-bottom: 1vw;
+        align-self: flex-start;
+        .a_label {
+          font-size: 0.78125vw;
+          color: var(--text);
+          margin-bottom: 5px;
+        }
+      }
+    }
+    .input_style,
+    .ip_input {
+      width: 100%;
+      box-shadow: var(--box-shadow);
+      padding-left: 0.78125vw;
+    }
+    .input_style:disabled {
+      background: #f4f7fe;
+    }
+    .__input__,
+    .__IP_input__ {
+      width: 100%;
+      margin-bottom: 30 * $desk + vw;
+      label {
+        font-size: 15 * $desk + vw;
+        color: var(--text);
+      }
+    }
+    .custom-select-container {
+      width: 100%;
+      font-size: 15 * $desk + vw;
+      margin-bottom: 30 * $desk + vw;
+
+      .selected-text {
+        border-radius: 6px;
+      }
+      .drop_icon {
+        top: 50%;
+      }
+    }
+    .lbl {
+      font-size: 0.78125vw;
+      color: var(--text);
+    }
+    .rtsp_ta {
+      position: relative;
+      width: 100%;
+      word-break: break-all;
+      outline-color: var(--primary);
+      border-radius: 6px;
+      border: 0;
+      padding: 5px 10px;
+      box-shadow: var(--box-shadow);
+      min-height: 2.8vw;
+      background: #f4f7fe;
+      color: rgb(99, 92, 92);
+      font-size: 0.78125vw;
+      margin-top: 5px;
+      margin-bottom: 1.5625vw;
+      p {
+        width: 85%;
+      }
+      .adjust_copy {
+        position: absolute;
+        color: var(--nav-bg);
+        // bottom: 2vw;
+        // bottom: 0.7vw;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 1vw;
+        cursor: pointer;
+      }
+      .adjust_copy:active {
+        animation: presss 0.2s 1 linear;
+      }
+    }
+  }
+  .device_auth_modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    z-index: 100;
+
+    .custom-select-container {
+      width: 100%;
+      font-size: 15 * $desk + vw;
+      margin-bottom: 30 * $desk + vw;
+
+      .selected-text {
+        --text: #000;
+        border-radius: 6px;
+      }
+      .drop_icon {
+        top: 50%;
+      }
+    }
+    .dropdown {
+      margin-top: 0.4vw;
+      position: relative;
+      z-index: 15;
+      p:first-child {
+        padding-bottom: 0.5vw;
+        padding-left: 0.5vw;
+      }
+      .dropdown-content {
+        background-color: lightyellow;
+        width: 100%;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        padding: 0.5vw;
+        border-radius: 1vw;
+        font-size: 1vw;
+        position: absolute;
+        bottom: 4vw;
+        z-index: 1;
+
+        /* Add a red text color and an "x" when the requirements are wrong */
+        .invalid {
+          color: red;
+        }
+        .invalid:before {
+          margin: 0.2vw 1vw;
+          content: "✖";
+        }
+
+        /* Add a green text color and a checkmark when the requirements are right */
+        .valid {
+          color: green;
+        }
+        .valid:before {
+          margin: 0.2vw 1vw;
+          content: "✔";
+        }
+      }
+    }
+  }
+  .user_auth_modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    z-index: 100;
+
+    .custom-select-container {
+      width: 100%;
+      font-size: 15 * $desk + vw;
+      margin-bottom: 30 * $desk + vw;
+
+      .selected-text {
+        --text: #000;
+        border-radius: 6px;
+      }
+      .drop_icon {
+        top: 50%;
+      }
+    }
+    .dropdown {
+      margin-top: 0.4vw;
+      position: relative;
+      z-index: 15;
+      p:first-child {
+        padding-bottom: 0.5vw;
+        padding-left: 0.5vw;
+      }
+      .dropdown-content {
+        background-color: lightyellow;
+        width: 100%;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        padding: 0.5vw;
+        border-radius: 1vw;
+        font-size: 1vw;
+        position: absolute;
+        bottom: 4vw;
+        z-index: 1;
+
+        /* Add a red text color and an "x" when the requirements are wrong */
+        .invalid {
+          color: red;
+        }
+        .invalid:before {
+          margin: 0.2vw 1vw;
+          content: "✖";
+        }
+
+        /* Add a green text color and a checkmark when the requirements are right */
+        .valid {
+          color: green;
+        }
+        .valid:before {
+          margin: 0.2vw 1vw;
+          content: "✔";
+        }
+      }
+    }
+  }
+  .pass_container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20vw;
+    background: var(--body-background);
+    align-self: center;
+    box-shadow: var(--card-box-shadow);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    h1 {
+      text-align: center;
+      margin: 0.5vw 0;
+      margin-top: 0;
+    }
+    .close_icon {
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      color: var(--text);
+      cursor: pointer;
+    }
+    .close_icon:active {
+      animation: press 0.2s 1 linear;
+    }
+    .dropdown {
+      margin-top: 0.4vw;
+      position: relative;
+      align-self: normal;
+      p:first-child {
+        padding-bottom: 0.5vw;
+        padding-left: 0.5vw;
+      }
+      .dropdown-content {
+        background-color: lightyellow;
+        width: 100%;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        padding: 0.5vw;
+        border-radius: 1vw;
+        font-size: 1vw;
+        position: absolute;
+        top: -0.4vw;
+        z-index: 1;
+
+        /* Add a red text color and an "x" when the requirements are wrong */
+        .invalid {
+          color: red;
+        }
+        .invalid:before {
+          margin: 0.2vw 1vw;
+          content: "✖";
+        }
+
+        /* Add a green text color and a checkmark when the requirements are right */
+        .valid {
+          color: green;
+        }
+        .valid:before {
+          margin: 0.2vw 1vw;
+          content: "✔";
+        }
+      }
+    }
+  }
+  .otpContainer {
+    display: flex;
+    justify-content: space-between;
+    margin: 45px 0;
+    flex-wrap: wrap;
+    .otpInput {
+      width: 35px;
+      height: 35px;
+      border: 2px solid #309bdb;
+      border-radius: 5px;
+      outline-color: var(--primary);
+      font-size: 16px;
+      text-align: center;
+    }
+  }
+  ._counter {
+    font-size: 35 * $desk + vw;
+    color: var(--primary);
+    text-align: center;
+    margin: 15px 0;
+  }
+  .resend__ {
+    text-align: center;
+    margin: 15px 0;
+    span {
+      cursor: pointer;
+      color: var(--primary);
+    }
+  }
+  .disabled {
+    color: #aaaaaa !important;
+    text-decoration: none !important;
+    cursor: auto !important;
+  }
+  .download_service_logs {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    z-index: 100;
+    .detail_container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      background: var(--body-background);
+      align-self: center;
+      padding: 1rem 4vw;
+      border-radius: 12px;
+      min-width: 25vw;
+      box-shadow: var(--card-box-shadow);
+      padding-bottom: 1.5vw;
+      h1 {
+        text-align: center;
+        font-size: 18 * $desk + vw;
+        margin-top: 1vw;
+        margin-bottom: 1vw;
+      }
+      .close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        background-color: var(--primary);
+        padding: 10 * $desk + vw;
+        border-bottom-left-radius: 8px;
+        border-top-right-radius: 12px;
+        cursor: pointer;
+        padding-bottom: 6 * $desk + vw;
+      }
+      .date_time {
+        margin-top: 1.0416666667vw;
+        width: 100%;
+
+        #startDate,
+        #endDate {
+          font-size: 0.78125vw;
+          font-family: Poppins;
+          font-weight: 600;
+          width: 100%;
+          height: 35 * $desk + vw;
+          border-radius: 6px;
+          padding: 0 5 * $desk + vw;
+          border: 0;
+          box-shadow: var(--card-box-shadow);
+        }
+      }
+      .time-label {
+        font-size: 0.78125vw;
+        font-family: PoppinsBold;
+        margin-bottom: 5px;
+      }
+      .limit_counter {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        height: 35 * $desk + vw;
+        box-shadow: var(--card-box-shadow);
+        border-radius: 6px;
+        width: 100%;
+        .add,
+        .subtract {
+          position: absolute;
+          border: 0;
+          border-radius: 6px;
+          width: 2vw;
+          height: 100%;
+          color: var(--primary);
+          cursor: pointer;
+          i {
+            vertical-align: middle;
+          }
+        }
+        .subtract {
+          left: 0;
+          background-color: var(--sidebar);
+        }
+        .add {
+          right: 0;
+          color: white;
+          background-color: var(--primary);
+        }
+        .subtract:active,
+        .add:active {
+          box-shadow: inset 4px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+        .count_value {
+          text-align: center;
+          font-size: 16 * $desk + vw;
+          .counter_text {
+            text-align: center;
+            font-family: PoppinsBold;
+            background-color: transparent;
+            border: 0;
+            color: var(--text);
+            outline: none;
+          }
+        }
+      }
+      .btn {
+        align-self: center;
+        margin-top: 1.5vw;
+        width: 4.5vw;
+        font-size: 0.7375vw;
+        min-height: 1.733vw;
+      }
+    }
+  }
+}
+
+.restart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background: #090d00;
+  color: rgba(255, 255, 255, 0.25);
+  text-align: center;
+  font: 700 4em/1 "Oswald", sans-serif;
+  overflow: hidden;
+  .company {
+    letter-spacing: 0;
+    padding: 0.25em 0 0.325em;
+    display: block;
+    margin: 0 auto;
+    text-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
+
+    /* Clip Background Image */
+
+    background: url("../../../assets/images/animated-text-fill.png") repeat-y;
+    background-clip: text;
+
+    /* Animate Background Image */
+
+    -webkit-text-fill-color: transparent;
+    animation: aitf 80s linear infinite;
+
+    /* Activate hardware acceleration for smoother animations */
+
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+  }
+  .circle-background {
+    stroke: #ddd;
+    fill: none;
+  }
+
+  .circle-progress {
+    stroke: #ee5100;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    transition: stroke-dashoffset 0.8s;
+  }
+
+  .circular {
+    animation: rotate 2s linear infinite;
+    transform-origin: center center;
+    width: 450px;
+    position: absolute;
+  }
+
+  .path {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+    animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+    stroke-linecap: round;
+  }
+  .shutdown {
+    position: absolute;
+    bottom: 18%;
+    font-size: 3vw;
+    color: #eee;
+    animation-name: breathe;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+}
